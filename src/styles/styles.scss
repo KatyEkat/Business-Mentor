@@ -1,1 +1,156 @@
-/* Тут пишем стили */ 
+:root {
+	--white: #ffffff;
+	--black: #000000;
+	--bg-main: #1c1c1c;
+	--input-border: #666666;
+	--input-hover: #333333;
+	--input-disabled-bg: #eeeeee;
+	--input-error-border: #e90000;
+	--input-error-bg: #ffefef;
+	--btn-disabled: #b3b3b3;
+	--btn-success: #28906f;
+	--btn-success-hover: #1f6e55;
+}
+
+* {
+	margin: 0;
+	padding: 0%;
+	box-sizing: border-box;
+}
+
+@import "reset";
+
+body {
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+}
+
+.main {
+	width: 100vw;
+	height: 100vh;
+	background: var(--bg-main);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-block {
+	background: var(--white);
+	padding: 24px 32px;
+	border-radius: 12px;
+	width: 600px;
+
+	&__title {
+		font-size: 48px;
+		font-weight: 700;
+		text-align: center;
+	}
+}
+
+.form {
+	&__label {
+		font-weight: 600;
+		font-size: 24px;
+		margin-bottom: 4px;
+		display: block;
+	}
+
+	&__input-wrapper {
+		position: relative;
+		margin-bottom: 16px;
+
+		.form__input-error {
+			display: none;
+			color: var(--input-error-border);
+			font-size: 16px;
+			margin-top: 4px;
+		}
+	}
+
+	&__input {
+		width: 100%;
+		height: 36px;
+		padding: 0 10px;
+		border: 1px solid var(--input-border);
+		border-radius: 6px;
+		font-size: 14px;
+		transition: 0.2s;
+
+		&--hover {
+			border-color: var(--input-hover);
+		}
+
+		&--disabled {
+			background-color: var(--input-disabled-bg);
+			border-color: var(--input-border);
+			pointer-events: none;
+		}
+
+		&--filled {
+			border-color: var(--black);
+			color: var(--black);
+		}
+
+		&--error {
+			border-color: var(--input-error-border);
+			background-color: var(--input-error-bg);
+
+			+ .form__input-error {
+				display: block;
+			}
+		}
+	}
+
+	&__button {
+		width: 100%;
+		height: 40px;
+		border-radius: 8px;
+		background: var(--black);
+		color: var(--white);
+		border: none;
+		font-weight: 600;
+		cursor: pointer;
+		transition: 0.2s;
+
+		&--default {
+			background: var(--black);
+		}
+
+		&:hover:not(.form__button--disabled):not(.form__button--success) {
+			background: var(--input-hover);
+		}
+
+		&:active:not(.form__button--disabled):not(.form__button--success) {
+			background: var(--black);
+		}
+
+		&--disabled {
+			background: var(--btn-disabled);
+			pointer-events: none;
+		}
+
+		&--success {
+			background: var(--btn-success);
+			pointer-events: none;
+		}
+
+		&--success:hover {
+			background: var(--btn-success-hover);
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.form-block {
+		width: 90%;
+		padding: 16px 20px;
+
+		&__title {
+			font-size: 36px;
+		}
+	}
+
+	.form__label {
+		font-size: 16px;
+	}
+}

@@ -1,0 +1,255 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --bg-main: #1c1c1c;
+  --input-border: #666666;
+  --input-hover: #333333;
+  --input-disabled-bg: #eeeeee;
+  --input-error-border: #e90000;
+  --input-error-bg: #ffefef;
+  --btn-disabled: #b3b3b3;
+  --btn-success: #28906f;
+  --btn-success-hover: #1f6e55;
+}
+
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizespeed;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+input[type=text],
+input[type=submit],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+button,
+a,
+label,
+input,
+textarea,
+[tabindex="0"] {
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+button:focus,
+a:focus,
+label:focus,
+input:focus,
+textarea:focus,
+[tabindex="0"]:focus {
+  outline: none;
+}
+
+input[type=text]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=text]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+input[type=password]::-webkit-caps-lock-indicator {
+  content: none;
+}
+
+input[type=number] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-block {
+  background: var(--white);
+  padding: 24px 32px;
+  border-radius: 12px;
+  width: 600px;
+}
+.form-block__title {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.form__label {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 4px;
+  display: block;
+}
+.form__input-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+.form__input-wrapper .form__input-error {
+  display: none;
+  color: var(--input-error-border);
+  font-size: 16px;
+  margin-top: 4px;
+}
+.form__input {
+  width: 100%;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+.form__input--hover {
+  border-color: var(--input-hover);
+}
+.form__input--disabled {
+  background-color: var(--input-disabled-bg);
+  border-color: var(--input-border);
+  pointer-events: none;
+}
+.form__input--filled {
+  border-color: var(--black);
+  color: var(--black);
+}
+.form__input--error {
+  border-color: var(--input-error-border);
+  background-color: var(--input-error-bg);
+}
+.form__input--error + .form__input-error {
+  display: block;
+}
+.form__button {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.form__button--default {
+  background: var(--black);
+}
+.form__button:hover:not(.form__button--disabled):not(.form__button--success) {
+  background: var(--input-hover);
+}
+.form__button:active:not(.form__button--disabled):not(.form__button--success) {
+  background: var(--black);
+}
+.form__button--disabled {
+  background: var(--btn-disabled);
+  pointer-events: none;
+}
+.form__button--success {
+  background: var(--btn-success);
+  pointer-events: none;
+}
+.form__button--success:hover {
+  background: var(--btn-success-hover);
+}
+
+@media (max-width: 576px) {
+  .form-block {
+    width: 90%;
+    padding: 16px 20px;
+  }
+  .form-block__title {
+    font-size: 36px;
+  }
+  .form__label {
+    font-size: 16px;
+  }
+}/*# sourceMappingURL=styles.css.map */
